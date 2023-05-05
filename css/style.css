@@ -34,7 +34,9 @@ img{
     max-width: 100%;
 }
 
-/* Header */
+
+/* Header (Titulo - Carrito - Menu del carrito) */
+
 header{
     display: flex;
     justify-content: space-between;
@@ -136,7 +138,9 @@ border-radius: 10px;
     display:none;
 }
 
-/* Main */
+
+/* Main (Productos en venta) */
+
 .contenedor-productos-ofrecidos{
     display: grid;
     grid-template-columns: repeat(3, 1fr);
