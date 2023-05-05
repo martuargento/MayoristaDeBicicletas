@@ -1,4 +1,4 @@
-d/* Reiniciando los estilos globales  */
+/* Reiniciando los estilos globales  */
 *::after,  
 *::before,
 
@@ -197,4 +197,17 @@ border-radius: 10px;
 .carrito-vacio{
     padding: 20px;
     text-align: center;
+}
+
+
+@media (max-width: 768px) {
+    .contenedor-productos-ofrecidos {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 480px) {
+    .contenedor-productos-ofrecidos {
+        grid-template-columns: 1fr;
+    }
 }
