@@ -147,11 +147,44 @@ const mostrarYAplicarEnHTML = () =>{
     //========= por el usuario y en que cantidades, por lo cual en cada iteracion  ========
     //======== vamos sumando por cada producto el valor por la cantidad, =========
     //============== en variables que iran acumulando la de todos los productos ==============
-    totalaPagar = totalaPagar + parseInt(producto.cantidad * producto.precio.slice(1)) 
+
+
+
+//====================================================================================
+//====================================================================================
+// Inicio Fijarse que es lo que hice con chat-gpt, es para que quite los puntos, pueda
+//hacer la operacion de sumar los valores, y los vuelva a mostrar con puntos.
+//si el resultado es de miles, con un solo punto, si supera el millon con dos puntos.
+    let precioEntero = parseInt(producto.precio.slice(1).replace('.',''))
+    totalaPagar = totalaPagar + parseInt(producto.cantidad * precioEntero) 
     contadorDeProductosEnCarrito = contadorDeProductosEnCarrito + producto.cantidad    
 
     }
     )
+    let totalFormateado = formatearNumero(totalaPagar);
+
+    function formatearNumero(numero) {
+        let totalTexto = numero.toString();
+        let longitud = totalTexto.length;
+        if (longitud <= 3) {
+            return totalTexto;
+        } else {
+            let primeraParte = totalTexto.slice(0, longitud - 3);
+            let segundaParte = totalTexto.slice(longitud - 3);
+            let primeraParteFormateada = primeraParte.replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+            return primeraParteFormateada + "." + segundaParte;
+        }
+}
+// fin Fijarse que es lo que hice con chat-gpt, es para que quite los puntos, pueda
+//hacer la operacion de sumar los valores, y los vuelva a mostrar con puntos.
+//si el resultado es de miles, con un solo punto, si supera el millon con dos puntos.
+//====================================================================================
+//====================================================================================
+
+
+
+
+
     //=====================================================================================
     //        TERMINA EL PROCESO DE METER EN EL MENU LOS PRODUCTOS SELECCIONADOS
     //=====================================================================================
@@ -163,7 +196,7 @@ const mostrarYAplicarEnHTML = () =>{
     //          INICIA PONER EL TOTAL FINAL $, Y LA CANTIDAD DE PRODUCTOS SELECCIONADOS
     //=====================================================================================
 
-    valorTotal.innerText = `$ ${totalaPagar}` 
+    valorTotal.innerText = `$ ${totalFormateado}` 
     
     contadorProductos.innerText = contadorDeProductosEnCarrito 
 
@@ -217,7 +250,41 @@ const mostrarYAplicarEnHTML = () =>{
 //                        FIN BARRA DE PROGRESO
 //=====================================================================================
 
- 
+
+var contenedores = document.querySelectorAll('.item');
+
+// metemos los div, que contienen cada producto, con su imagen y otras cosas
+//a la variable contenedores
+//en este caso no metemos un solo div, sino muchos, asi que sera de tipo nodelist
+//es similar a un arreglo, pero en cada posicion tiene un objeto
+
+
+contenedores.forEach(function(contenedor) {
+//lo recorremos con forEach, y por cada iteracion, que ejecute la funcion
+  var imagen = contenedor.querySelector('.imagen');
+//metemos la clase .imagen (que esta dentro del div de esta iteracion)
+//en la variable imagen
+  contenedor.addEventListener('mousemove', function(e) {
+//cada vez que se pase el mouse por este div, que se ejecute la siguiente funcion:
+var x = e.offsetX / contenedor.offsetWidth * 100;
+//metemos en la variable x, la division entre la posición horizontal 
+// del cursor del mouse dentro del elemento contenedor (div)
+//en esta iteracion, y el ancho total del elemento contenedor
+// (contenedor.offsetWidth). (seria el ancho total del div)
+//y luego lo multiplica por 100 para obtener un porcentaje. 
+//El resultado es la posición relativa del cursor del mouse 
+//dentro del elemento contenedor, expresado en porcentaje.*/
+    var y = e.offsetY / contenedor.offsetHeight * 100;
+//lo mismo pero con la posicion vertical del cursor del mouse
+    imagen.style.transformOrigin = x + '% ' + y + '%';
+//y hacemos un transform-origin de css, pero desde javascript. en la clase de la .imagen
+//estableciendo el punto de origen de la transformacion
+//con lo cual el zoom que aplicamos con el hover que ya teniamos en css
+//se originara en las coordenadas donde tengamos el puntero del mouse
+  });
+});
+
+
 
 
 

@@ -9,6 +9,9 @@
     box-sizing: border-box;
 }
 
+/* Fuente */
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
 body{
     margin: 0 auto;
     max-width: 1200px;
@@ -16,10 +19,22 @@ body{
     color: #333
 }
 
+
 span, p, h1, h2, h3, figure, button{
     user-select: none;
 }
 
+p{
+    font-family: poppins;
+}
+
+a{
+    text-decoration: none;
+}
+
+a:visited{
+    color: inherit;
+}
 .icono-carrito{
     width: 40px;
     height: 40px;
@@ -152,12 +167,13 @@ border-radius: 10px;
 }
 
 .item:hover{
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.44);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.669);
 }
 
 .item img{
+    position: relative;
     width: 100%;
-    height: 300px;
+    height: 100%;
     object-fit: cover; 
     border-radius: 10px 10px 0 0;
     transition: all .5s;
@@ -169,6 +185,10 @@ border-radius: 10px;
 
 .item figure{
     overflow: hidden;
+}
+
+figure{
+    position: relative;
 }
 
 .info-producto-ofrecido{
@@ -289,3 +309,25 @@ border-radius: 10px;
     background: linear-gradient(to right, #ffffff25, #f7d2d2b6);
     transition: width .3s ease-out;
 }
+
+.superposicion{
+position: absolute;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+/* background-color: rgba(173, 212, 33, 0.283); */
+opacity: 2;
+transition: opacity 0.5s ease;
+}
+
+figure:hover .superposicion{
+opacity: 1;
+}
+
+figure:hover .imagen{
+    transform: scale(1.55);
+    
+}
+
+
