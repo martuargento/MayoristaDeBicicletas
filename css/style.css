@@ -23,12 +23,26 @@ body{
 span, p, h1, h2, h3, figure, button{
     user-select: none;
 }
+
+h1{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    width: 300px;
+}
 ul{
+    display:flex;
+    flex-direction: inline;
     list-style: none;
+    justify-content: center;
+    align-items: center;
+    height: 50px;
+    margin: 0px;
 }
 ul li{
-    margin: 30px;
+    margin: 40px;
     display:inline;
+   
 }
 
 p{
@@ -37,6 +51,7 @@ p{
 
 a{
     text-decoration: none;
+    color: black;
 }
 
 a:visited{
@@ -67,6 +82,7 @@ header{
 
 .contenedor-carrito{
     position: relative;
+    margin-right: 10px;
 }
 
 .contador-productos{
@@ -284,9 +300,23 @@ figure{
     .contenedor-productos-ofrecidos{
         grid-template-columns: 1fr;
     }
+    
+    h1{
+        width:100px;
+    }
+    ul{
+        flex-direction: column;
+    }
+    ul li{
+        margin: 10px;
+    }
+    a{
+        font-size: 12px;
+        font-weight: 550;
+    }
 
     .contenedor-productos-carrito{
-        width:250px;
+        width:300px;
     }
 
     .info-producto-seleccionado{
@@ -298,11 +328,22 @@ figure{
     }
 
     .cantidad-producto-seleccionado{
-        margin-right: 7px;
+        display: flex;
+        width: 100%;
+        margin-right: 10px;
+        align-items: center;
+        justify-content: center;
     }
 
     .titulo-producto-seleccionado {
         width: 100px;
+        height: 80px;
+    }
+
+    .precio-producto-seleccionado{
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }
 
     .icono-cerrar{
