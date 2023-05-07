@@ -314,9 +314,9 @@ figure{
         font-size: 12px;
         font-weight: 550;
     }
-
+    
     .contenedor-productos-carrito{
-        width:300px;
+        width:270px;
     }
 
     .info-producto-seleccionado{
@@ -336,19 +336,22 @@ figure{
     }
 
     .titulo-producto-seleccionado {
-        width: 100px;
+        display: flex;
+        width: 80px;
         height: 80px;
+        align-items: center;
+        justify-content: center;
     }
 
     .precio-producto-seleccionado{
         display: flex;
-        justify-content: center;
+        justify-content: start;
         align-items: center;
     }
 
     .icono-cerrar{
         margin-left: 20px;
-        scale: 2;
+        scale: 1.5;
     }
 
 }
