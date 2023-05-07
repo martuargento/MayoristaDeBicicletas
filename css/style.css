@@ -206,8 +206,86 @@ border-radius: 10px;
     }
 }
 
+@media (max-width: 768px) {
+    
+    header h1{
+        margin-left: 10px;
+    }
+
+    .contenedor-productos-ofrecidos{
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .contenedor-productos-carrito{
+        width:350px;
+    }
+
+    .info-producto-seleccionado{
+        display:flex;
+        justify-content: space-between;
+        /* la informacion aparece toda junta, pegada, porque esta ocupando el mismo espacio */
+        /* para poder decirle que ocupe mas espacio ponemos el siguiente comando */
+        flex: 0.8;
+    }
+
+    .cantidad-producto-seleccionado{
+        margin-right: 7px;
+    }
+
+    .titulo-producto-carrito {
+        width: 100px;
+    }
+
+    .icono-cerrar{
+        margin-left: 10px;
+    }
+
+}
+
+
 @media (max-width: 480px) {
-    .contenedor-productos-ofrecidos {
+
+    header h1{
+        margin-left: 10px;
+    }
+
+    .contenedor-productos-ofrecidos{
         grid-template-columns: 1fr;
     }
+
+    .contenedor-productos-carrito{
+        width:250px;
+    }
+
+    .info-producto-seleccionado{
+        display:flex;
+        justify-content: space-between;
+        /* la informacion aparece toda junta, pegada, porque esta ocupando el mismo espacio */
+        /* para poder decirle que ocupe mas espacio ponemos el siguiente comando */
+        flex: 1.8;
+    }
+
+    .cantidad-producto-seleccionado{
+        margin-right: 7px;
+    }
+
+    .titulo-producto-seleccionado {
+        width: 100px;
+    }
+
+    .icono-cerrar{
+        margin-left: 20px;
+        scale: 2;
+    }
+
+}
+
+#barraDeProgreso{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 50%;
+    height: 8px;
+    background: linear-gradient(to right, #ffffff25, #f7d2d2b6);
+    transition: width .3s ease-out;
 }

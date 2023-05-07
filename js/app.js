@@ -172,3 +172,52 @@ const mostrarYAplicarEnHTML = () =>{
     //=====================================================================================
 
 } 
+
+
+//=====================================================================================
+//                        INICIO BARRA DE PROGRESO
+//=====================================================================================
+
+    const paginaCompleta = document.querySelector('.pagina')
+    const barraDeProgreso = document.querySelector('#barraDeProgreso')
+    
+    const barraDeProgresoAnimada = () =>{
+    let posicionScroll = -paginaCompleta.getBoundingClientRect().top
+    
+    
+    let numerosDeProgreso = (posicionScroll / (paginaCompleta.getBoundingClientRect().height - document.documentElement.clientHeight)) * 100
+     let value = Math.floor(numerosDeProgreso)
+     barraDeProgreso.style.width = `${value}%`
+    
+    
+    if (value < 0 ){
+        return (barraDeProgreso.style.width = "0%")
+    }
+
+    if(value > 95){
+        return (barraDeProgreso.style.width = "120%")
+    }
+    
+    }
+    
+ 
+    
+
+    window.addEventListener('scroll', () =>{ 
+
+         if(window.innerWidth < 480){
+            barraDeProgresoAnimada();
+            }
+
+        })
+      
+    
+    
+//=====================================================================================
+//                        FIN BARRA DE PROGRESO
+//=====================================================================================
+
+ 
+
+
+
