@@ -357,9 +357,9 @@ figure{
     position: fixed;
     top: 0;
     left: 0;
-    width: 50%;
+    width: 0%;
     height: 8px;
-    background: linear-gradient(to right, #ffffff25, #f7d2d2b6);
+    background: linear-gradient(to right, #ffffff25, #f7d2d2d1);
     transition: width .3s ease-out;
 }
 
