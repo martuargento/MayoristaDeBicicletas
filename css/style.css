@@ -176,6 +176,24 @@ border-radius: 10px;
     display:none;
 }
 
+.comprar{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+}
+
+.boton-comprar{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 25%;
+    padding: 10px;
+    background-color: #2dcfa4ec;
+    border-radius: 10px;
+    font-size: 15px;
+}
+
 
 /* Main (Productos en venta) */
 
@@ -351,7 +369,7 @@ figure{
 
     .icono-cerrar{
         margin-left: 20px;
-        scale: 1.8;
+        scale: 2;
     }
 
 }
@@ -385,5 +403,22 @@ figure:hover .imagen{
     transform: scale(1.55);
     
 }
+
+.estilosNuestraHistoria{
+    margin: 20px;
+}
+
+.estilosContactanos{
+    margin: 20px;
+}
+
+.estilosDatosComprador{
+    margin: 40px;
+}
+
+.estilosComprobante{
+    margin: 50px;
+}
+
 
 
