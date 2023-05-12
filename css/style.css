@@ -226,10 +226,15 @@ transition: 1s;
 
 .item{
     border-radius: 10px;
+    border: 1px solid #dedede;
+    transition: all 0.4s ease-in-out;
+    overflow: hidden;
 }
 
 .item:hover{
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.669);
+    border: 1px solid #000;
+    transition: all 0.2s ease-in-out;
 }
 
 .item img{
