@@ -337,4 +337,3 @@ var x = e.offsetX / contenedor.offsetWidth * 100;
 
 
 
-
