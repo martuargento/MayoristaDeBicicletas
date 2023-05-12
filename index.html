@@ -53,6 +53,7 @@
                                 <span class="cantidad-producto-seleccionado">1</span>
                                 <p class="titulo-producto-seleccionado">Zapatilla Nike</p>
                                 <span class="precio-producto-seleccionado">$80</span>
+                                <span class="precio-producto-seleccionado-usd">0</span>
                             </div>
                             <!-- icono de X -->
                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24     24"     stroke-width="1.5" stroke="currentColor" class="icono-cerrar">
@@ -65,6 +66,7 @@
                     <div class="carrito-total ocultar">
                         <h3>Total:</h3>
                         <span class="total-pagar">$200</span>    
+                        <span class="total-pagar-usd">0</span>    
                     </div>
                     <div class="comprar ocultar">
                         <button class="boton-comprar"><a href="datosComprador.html">Comprar</a></button>
@@ -75,7 +77,7 @@
         </header>
 
         <!-- Contenedor de items -->
-        <div class="contenedor-productos-ofrecidos">
+        <div id="productos" class="contenedor-productos-ofrecidos">
 
             <!-- Bici 1 -->
             <div class="item">
@@ -86,7 +88,10 @@
             
                 <div class="info-producto-ofrecido">
                     <h2>Mountan Bike Battle 210</h2>
-                    <p class="precio">$40.000</p>
+                    <div class="contenedor-precio">
+                        <p class="precio">$40.000</p>
+                        <p class="precio_usd">0</p>
+                    </div>
                     <button class="btn-agregar-carrito">Añadir al carrito</button>
                 </div>
             </div>
@@ -100,7 +105,10 @@
            
                 <div class="info-producto-ofrecido">
                     <h2>Bicicleta paseo Fiorenza</h2>
-                    <p class="precio">$70.000</p>
+                    <div class="contenedor-precio">
+                        <p class="precio">$70.000</p>
+                        <p class="precio_usd">0</p>
+                    </div>
                     <button class="btn-agregar-carrito">Añadir al carrito</button>
                 </div>
             </div>
@@ -115,7 +123,11 @@
             
                 <div class="info-producto-ofrecido">
                     <h2>Bicicleta infantil Reaktor</h2>
-                    <p class="precio">$15.000</p>
+                    <div class="contenedor-precio">
+                        <p class="precio">$15.000</p>
+                        <p class="precio_usd">0</p>
+                    </div>
+                    
                 <button class="btn-agregar-carrito">Añadir al carrito</button>
                 </div>
             </div>
@@ -129,7 +141,11 @@
             
                 <div class="info-producto-ofrecido">
                     <h2>Bicicleta Raleigh</h2>
-                    <p class="precio">$63.000</p>
+                    <div class="contenedor-precio">
+                        <p class="precio">$63.000</p>
+                        <p class="precio_usd">0</p>
+                    </div>
+                    
                     <button class="btn-agregar-carrito">Añadir al carrito</button>
                 </div>
             </div>
@@ -143,10 +159,15 @@
                         
                 <div class="info-producto-ofrecido">
                     <h2>Mountain Bike Olmo</h2>
-                    <p class="precio">$45.000</p>
+                    <div class="contenedor-precio">
+                        <p class="precio">$45.000</p>
+                        <p class="precio_usd">0</p>
+                    </div>
+                    
                     <button class="btn-agregar-carrito">Añadir al carrito</button>
                 </div>
             </div>
+            
             <!-- Bici 6 -->
             <div class="item">
                 <figure>
@@ -156,7 +177,10 @@
                         
                 <div class="info-producto-ofrecido">
                     <h2>Urbana Mujer Olmo</h2>
-                    <p class="precio">$20.000</p>
+                    <div class="contenedor-precio">
+                        <p class="precio">$20.000</p>
+                        <p class="precio_usd">0</p>
+                    </div>
                     <button class="btn-agregar-carrito">Añadir al carrito</button>
                 </div>
             </div>

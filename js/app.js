@@ -1,3 +1,59 @@
+
+var usd_cot_oficial = 0
+// API 
+// let token = 'eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3MTU0MjMwNzQsInR5cGUiOiJleHRlcm5hbCIsInVzZXIiOiJtdmF6cXVlem11bHRpbWVkaWFAZ21haWwuY29tIn0.H8-zPUvXIo7l8lbGqM4i7IBlUsRSdwXDVZOhb-_hE13mWYqxHHYbFRS0HFBGT8VZOO8Yropt6i2yRYnEFkBNsg';
+// Vence 2024-05-11 07:24:34
+// Se pueden hacer 100 request por día
+// https://estadisticasbcra.com/api/documentacion
+// NO FUNCIONO - PROBLEMA DE CORS
+// https://www.reddit.com/r/argentina/comments/e63ezq/necesito_una_api_para_el_valor_del_d%C3%B3lar/
+function getUSDdata(){
+    // var apiCallHeaders = new Headers();
+    // apiCallHeaders.append("Authorization", "Bearer " + token);
+    var requestOptions = {
+    //     method: 'GET',
+    //     headers: apiCallHeaders,
+    //     redirect: 'follow'
+    };
+    // fetch("https://api.estadisticasbcra.com/usd_of", requestOptions)
+    // https://bluelytics.com.ar/#!/api
+    fetch("https://api.bluelytics.com.ar/v2/latest", requestOptions)
+    .then(response => response.json())
+    .then((data) => {
+        // console.log('Cotización oficial: USD' + data.oficial.value_sell);
+        usd_cot_oficial = data.oficial.value_sell;
+        return usd_cot_oficial;
+      })
+    .catch(console.error);
+}
+
+
+usd_cot_oficial = getUSDdata();
+console.log(usd_cot_oficial)
+
+let precio_usd_productos = document.getElementById('productos').getElementsByClassName('contenedor-precio');
+
+for( i=0; i< precio_usd_productos.length; i++ )
+{
+    let precio_producto =precio_usd_productos[i].querySelector('.precio').textContent;
+    precio_producto = precio_producto.replace(/\D/g, '')
+    precio_producto = Number(precio_producto)
+
+    // console.log(typeof(usd_cot_oficial));
+
+    let precio_usd_producto = precio_producto / usd_cot_oficial;
+    // console.log('Precio USD: ' + precio_usd_producto)
+    
+    
+    // precio_usd_productos[i].querySelector('.precio_usd').textContent;
+    
+    // console.log(precio_producto);
+
+}
+
+
+
+
 const btnCarrito = document.querySelector('.contenedor-carrito-icono') 
 
 const contenedorProductosCarrito = document.querySelector('.contenedor-productos-carrito')
@@ -18,8 +74,12 @@ const productosOfrecidos = document.querySelector('.contenedor-productos-ofrecid
 let productosFinalesSeleccionados = []
 
 const valorTotal = document.querySelector('.total-pagar')
+const valorTotalUSD = document.querySelector('.total-pagar-usd')
 
 const contadorProductos = document.querySelector('#contador-productos')
+
+
+
 
 
 productosOfrecidos.addEventListener('click', e => {
@@ -31,7 +91,8 @@ productosOfrecidos.addEventListener('click', e => {
         const infoProductoElegido = {
             cantidad: 1,
             titulo: producto.querySelector('h2').textContent,
-            precio: producto.querySelector('p').textContent
+            precio: producto.querySelector('p.precio').textContent,
+            precio_usd: producto.querySelector('p.precio_usd').textContent
         }
        
 
@@ -117,6 +178,7 @@ const mostrarYAplicarEnHTML = () =>{
     //------------------------ fin de ver si el carrito esta vacio ------------------------
 
     let totalaPagar = 0;
+    let totalaPagarUSD = 0;
     let contadorDeProductosEnCarrito = 0; 
 
     //=====================================================================================
@@ -136,6 +198,7 @@ const mostrarYAplicarEnHTML = () =>{
             <span class="cantidad-producto-seleccionado">${producto.cantidad}</span> 
             <p class="titulo-producto-seleccionado">${producto.titulo}</p>
             <span class="precio-producto-seleccionado">${producto.precio}</span>
+            <span class="precio-producto-seleccionado-usd">${producto.precio_usd}</span>
         </div>
         <!-- icono de X -->
         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24     24"     stroke-width="1.5" stroke="currentColor" class="icono-cerrar">
@@ -153,18 +216,23 @@ const mostrarYAplicarEnHTML = () =>{
 
 
 
-//====================================================================================
-//====================================================================================
-// Inicio Fijarse que es lo que hice con chat-gpt, es para que quite los puntos, pueda
-//hacer la operacion de sumar los valores, y los vuelva a mostrar con puntos.
-//si el resultado es de miles, con un solo punto, si supera el millon con dos puntos.
+    //====================================================================================
+    //====================================================================================
+    // Inicio Fijarse que es lo que hice con chat-gpt, es para que quite los puntos, pueda
+    //hacer la operacion de sumar los valores, y los vuelva a mostrar con puntos.
+    //si el resultado es de miles, con un solo punto, si supera el millon con dos puntos.
     let precioEntero = parseInt(producto.precio.slice(1).replace('.',''))
+    let precioEnteroUSD = parseInt(producto.precio_usd.slice(1).replace('.',''))
+    
     totalaPagar = totalaPagar + parseInt(producto.cantidad * precioEntero) 
+    totalaPagarUSD = totalaPagarUSD + parseInt(producto.cantidad * precioEnteroUSD) 
+    
     contadorDeProductosEnCarrito = contadorDeProductosEnCarrito + producto.cantidad    
 
     }
     )
     let totalFormateado = formatearNumero(totalaPagar);
+    let totalFormateadoUSD = formatearNumero(totalaPagarUSD);
 
     function formatearNumero(numero) {
         let totalTexto = numero.toString();
@@ -200,6 +268,7 @@ const mostrarYAplicarEnHTML = () =>{
     //=====================================================================================
 
     valorTotal.innerText = `$ ${totalFormateado}` 
+    valorTotalUSD.innerText = `USD ${totalFormateadoUSD}` 
     
     contadorProductos.innerText = contadorDeProductosEnCarrito 
 
@@ -286,7 +355,6 @@ var x = e.offsetX / contenedor.offsetWidth * 100;
 //se originara en las coordenadas donde tengamos el puntero del mouse
   });
 });
-
 
 
 

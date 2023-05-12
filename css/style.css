@@ -36,8 +36,10 @@ header h1{
     font-family: 'Hanalei Fill', cursive;
 }
 
-header li{
+header ul li a{
     font-family: 'Nerko One', cursive;
+    font-size: 18px;
+    line-height: 18px;
 }
 
 ul{
