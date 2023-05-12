@@ -1,3 +1,39 @@
+
+var usd_cot_oficial = 0
+// API 
+// let token = 'eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3MTU0MjMwNzQsInR5cGUiOiJleHRlcm5hbCIsInVzZXIiOiJtdmF6cXVlem11bHRpbWVkaWFAZ21haWwuY29tIn0.H8-zPUvXIo7l8lbGqM4i7IBlUsRSdwXDVZOhb-_hE13mWYqxHHYbFRS0HFBGT8VZOO8Yropt6i2yRYnEFkBNsg';
+// Vence 2024-05-11 07:24:34
+// Se pueden hacer 100 request por día
+// https://estadisticasbcra.com/api/documentacion // NO FUNCIONO - PROBLEMA DE CORS
+
+async function getUSDdata() {
+    const resp = await fetch(`https://api.bluelytics.com.ar/v2/latest`);
+    // console.log(resp)
+    const json = await resp.json();
+    // console.log(json)
+    usd_cot_oficial = json.oficial.value_sell
+    // console.log('Cot Oficial: ' + usd_cot_oficial)
+    let precio_usd_productos = document.getElementById('productos').getElementsByClassName('contenedor-precio');
+
+    // recorro los items publicados para transformar el precio
+    for( i=0; i< precio_usd_productos.length; i++ )
+    {
+        let precio_producto = precio_usd_productos[i].querySelector('.precio').textContent
+        // limpio el string de simbolos dejo el número solo
+        precio_producto = precio_producto.replace(/\D/g, '')
+        // tranformo a número
+        precio_producto = Number(precio_producto)
+        // transformo $AR a USD
+        let precio_usd_producto = Math.round(precio_producto / usd_cot_oficial)
+        // console.log('Precio USD: ' + precio_usd_producto)
+        // modifico el precio en dolares de acuerdo a la cot
+        precio_usd_productos[i].querySelector('.precio_usd').innerHTML = 'USD ' + precio_usd_producto
+    }
+}
+getUSDdata();
+
+
+
 const btnCarrito = document.querySelector('.contenedor-carrito-icono') 
 
 const contenedorProductosCarrito = document.querySelector('.contenedor-productos-carrito')
@@ -18,6 +54,7 @@ const productosOfrecidos = document.querySelector('.contenedor-productos-ofrecid
 let productosFinalesSeleccionados = []
 
 const valorTotal = document.querySelector('.total-pagar')
+const valorTotalUSD = document.querySelector('.total-pagar-usd')
 
 const contadorProductos = document.querySelector('#contador-productos')
 
@@ -31,7 +68,8 @@ productosOfrecidos.addEventListener('click', e => {
         const infoProductoElegido = {
             cantidad: 1,
             titulo: producto.querySelector('h2').textContent,
-            precio: producto.querySelector('p').textContent
+            precio: producto.querySelector('p.precio').textContent,
+            precio_usd: producto.querySelector('p.precio_usd').textContent
         }
        
 
@@ -117,6 +155,7 @@ const mostrarYAplicarEnHTML = () =>{
     //------------------------ fin de ver si el carrito esta vacio ------------------------
 
     let totalaPagar = 0;
+    let totalaPagarUSD = 0;
     let contadorDeProductosEnCarrito = 0; 
 
     //=====================================================================================
@@ -135,7 +174,10 @@ const mostrarYAplicarEnHTML = () =>{
         <div class="info-producto-seleccionado">
             <span class="cantidad-producto-seleccionado">${producto.cantidad}</span> 
             <p class="titulo-producto-seleccionado">${producto.titulo}</p>
-            <span class="precio-producto-seleccionado">${producto.precio}</span>
+            <div class="contenedor-productos-sel">
+                <span class="precio-producto-seleccionado">${producto.precio}</span>
+                <span class="precio-producto-seleccionado-usd">${producto.precio_usd}</span>
+            </div>
         </div>
         <!-- icono de X -->
         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24     24"     stroke-width="1.5" stroke="currentColor" class="icono-cerrar">
@@ -153,18 +195,23 @@ const mostrarYAplicarEnHTML = () =>{
 
 
 
-//====================================================================================
-//====================================================================================
-// Inicio Fijarse que es lo que hice con chat-gpt, es para que quite los puntos, pueda
-//hacer la operacion de sumar los valores, y los vuelva a mostrar con puntos.
-//si el resultado es de miles, con un solo punto, si supera el millon con dos puntos.
+    //====================================================================================
+    //====================================================================================
+    // Inicio Fijarse que es lo que hice con chat-gpt, es para que quite los puntos, pueda
+    //hacer la operacion de sumar los valores, y los vuelva a mostrar con puntos.
+    //si el resultado es de miles, con un solo punto, si supera el millon con dos puntos.
     let precioEntero = parseInt(producto.precio.slice(1).replace('.',''))
+    let precioEnteroUSD = parseInt(producto.precio_usd.replace(/\D/g, ''))
+    
     totalaPagar = totalaPagar + parseInt(producto.cantidad * precioEntero) 
+    totalaPagarUSD = totalaPagarUSD + parseInt(producto.cantidad * precioEnteroUSD) 
+    
     contadorDeProductosEnCarrito = contadorDeProductosEnCarrito + producto.cantidad    
 
     }
     )
     let totalFormateado = formatearNumero(totalaPagar);
+    let totalFormateadoUSD = formatearNumero(totalaPagarUSD);
 
     function formatearNumero(numero) {
         let totalTexto = numero.toString();
@@ -200,6 +247,7 @@ const mostrarYAplicarEnHTML = () =>{
     //=====================================================================================
 
     valorTotal.innerText = `$ ${totalFormateado}` 
+    valorTotalUSD.innerText = `USD ${totalFormateadoUSD}` 
     
     contadorProductos.innerText = contadorDeProductosEnCarrito 
 
