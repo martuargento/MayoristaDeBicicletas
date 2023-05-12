@@ -29,7 +29,17 @@ h1{
     justify-content: center;
     align-items: center;
     width: 300px;
+    font-family: poppins;
 }
+
+header h1{
+    font-family: 'Hanalei Fill', cursive;
+}
+
+header li{
+    font-family: 'Nerko One', cursive;
+}
+
 ul{
     display:flex;
     flex-direction: inline;
@@ -39,10 +49,10 @@ ul{
     height: 50px;
     margin: 0px;
 }
+
 ul li{
     margin: 40px;
     display:inline;
-   
 }
 
 p{
@@ -78,6 +88,12 @@ header{
     display: flex;
     justify-content: space-between;
     padding: 30px 0 40px 0;
+}
+
+header ul li:hover{
+background-color: rgb(204, 240, 74);
+border-radius: 10px;
+transition: 1s;
 }
 
 .contenedor-carrito{
@@ -117,7 +133,7 @@ border-radius: 10px;
 
 .producto-seleccionado{
     display:flex;
-    padding: 30px;
+    padding: 27px;
     justify-content: space-between;
     border-bottom: 1px solid rgba(0,0,0,0.20 );
     align-items: center;
@@ -134,6 +150,9 @@ border-radius: 10px;
 }
 
 .precio-producto-seleccionado{
+    display: flex;
+    justify-content: start;
+    align-items: center;
     font-weight: 700;
     font-size: 20px;
     margin-left: 10px;
@@ -142,6 +161,7 @@ border-radius: 10px;
 .cantidad-producto-seleccionado{
     font-weight: 400;
     font-size: 20px;
+    margin-right: 10px;
 }
 
 .icono-cerrar{
@@ -170,10 +190,6 @@ border-radius: 10px;
 .total-pagar{
     font-size: 20px;
     font-weight: 900;
-}
-
-.ocultar{
-    display:none;
 }
 
 .comprar{
@@ -260,6 +276,98 @@ figure{
     text-align: center;
 }
 
+.contactanosh2{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Permanent Marker', cursive;
+}
+
+
+.estilosContactanos p{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Raleway', sans-serif;
+    font-size: 20px;
+
+}
+
+.redes-sociales{
+    display:flex;
+    gap: 10px;
+}
+
+.boton-redes{
+    flex: 1;
+    /* con flex: 1; crecen todos de forma uniforme, del mismo tamaño los botones */
+    border: 1px solid #eee;
+    background: none;
+    padding: 15px;
+    font-weight: 900;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 13px;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.boton-redes:hover{
+    background-color: #f0f0f0;
+}
+
+.boton-redes i{
+    margin-right: 10px;
+}
+
+.icoinstagram{
+    color: rgb(218, 68, 68);
+}
+.icofacebook{
+    color: rgb(7, 7, 235);
+}
+.icowhatsapp{
+    color: rgb(3, 141, 3);
+}
+.icotelegram{
+    color:rgb(52, 197, 255)
+}
+.icotiktok{
+    color:rgb(10, 10, 10);
+}
+
+.mapa{
+    display:flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.nuestrahistoriah1{
+    display: flex;
+    font-family: 'Hanalei Fill', cursive;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.nuestrahistoriap{
+    font-family: poppins;
+    font-size: x-large;
+}
+
+.NHvolver, .Cvolver{
+    font-family: 'Nerko One', cursive;
+}
+
+.boton-volver{
+    padding: 5px;
+    font-size: 20px;
+}
+
+.boton-volver:hover{
+    background-color: rgb(204, 240, 74);
+}
 
 @media (max-width: 768px) {
     .contenedor-productos-ofrecidos {
@@ -420,5 +528,7 @@ figure:hover .imagen{
     margin: 50px;
 }
 
-
+.ocultar{
+    display:none;
+}
 

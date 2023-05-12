@@ -3,6 +3,7 @@ const btnCarrito = document.querySelector('.contenedor-carrito-icono')
 const contenedorProductosCarrito = document.querySelector('.contenedor-productos-carrito')
 
 const divtotal = document.querySelector('.carrito-total')
+const botonComprar = document.querySelector('.comprar')
 
 
 btnCarrito.addEventListener('click', () => {
@@ -104,11 +105,13 @@ const mostrarYAplicarEnHTML = () =>{
         `
 
         divtotal.classList.add('ocultar')
+        botonComprar.classList.add('ocultar')
            
     }
     else
     {
         divtotal.classList.remove('ocultar')
+        botonComprar.classList.remove('ocultar')
     }
 
     //------------------------ fin de ver si el carrito esta vacio ------------------------
