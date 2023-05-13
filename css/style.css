@@ -305,6 +305,11 @@ figure{
     border-radius: 1%;
 }
 
+.info-producto-ofrecido button:hover{
+    background-color: #000000ea;
+    transition: 0.5s;
+}
+
 .carrito-vacio{
     padding: 20px;
     text-align: center;
