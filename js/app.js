@@ -102,6 +102,9 @@ productosOfrecidos.addEventListener('click', e => {
             console.log(productosFinalesSeleccionados)
 
         } 
+        
+        // Guardamos los productos seleccionados en el localStorage para usarlo en otra pagina a esos datos 
+        localStorage.setItem('productosSeleccionados', JSON.stringify(productosFinalesSeleccionados));
 
         //============= fin agrega el nuevo producto que no existia en la lista =============
         

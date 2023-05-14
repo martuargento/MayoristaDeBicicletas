@@ -408,6 +408,44 @@ figure{
     background-color: rgb(204, 240, 74);
 }
 
+/* Pagina comprobante */
+.comprobante{
+    background-color: #d0cfcf53;
+    margin-left: 10%;
+    margin-right: 10%;
+    font-family: 'Lato', sans-serif;;
+}
+
+.comprobante p{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 10px;
+}
+
+.comprobante h1{
+    width: 100%;
+    padding-top: 10px;
+    margin-bottom: 20px;
+}
+
+.producto-comprado{
+    margin-bottom: 40px;
+}
+
+.tituloDetalleDeLaCompra{
+    border-width: 3px; 
+    border-style: solid;
+    border-color: black;
+}
+.detalleDeLaCompra{
+    border-left: 1px dotted black;
+    border-right: 1px dotted black;
+    border-bottom: 1px dotted black;
+    
+}
+
+
 @media (max-width: 768px) {
     .contenedor-productos-ofrecidos {
         grid-template-columns: repeat(2, 1fr);
@@ -646,3 +684,4 @@ figure:hover .imagen{
         align-items: center;
     }
 }
+
