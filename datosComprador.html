@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Realizar compra</title>
+    <link rel="icon" href="img/ico/favicon.ico">
+   
+
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<body>
+    <header>
+        <p><a href="index.html">Volver</a></p>
+    </header>
+
+    <h2 class="contactanosh2">Complete con su método de pago</h2>
+    <br>
+    <fieldset class="fieldset"> 
+    <form method="post" action="procesar.php">
+      <label for="nombre">Nombre Completo:</label>
+      <input type="text" id="nombre" name="nombre" required><br><br>
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" required><br><br>
+      <label for="direccion">Dirección:</label>
+      <input type="text" id="direccion" name="direccion" required><br><br>
+      <label for="ciudad">Ciudad:</label>
+      <input type="text" id="ciudad" name="ciudad" required><br><br>
+      <label for="estado">Estado:</label>
+      <input type="text" id="estado" name="estado" required><br><br>
+      <label for="codigo-postal">Código Postal:</label>
+      <input type="text" id="codigo-postal" name="codigo-postal" required><br><br>
+      <label for="tarjeta">Número de Tarjeta de Crédito:</label>
+      <input type="text" id="tarjeta" name="tarjeta" required><br><br>
+      <label for="expiracion">Fecha de Expiración:</label>
+      <input type="month" id="expiracion" name="expiracion" required><br><br>
+      <label for="cvv">CVV:</label>
+      <input type="text" id="cvv" name="cvv" required><br><br>
+      <!-- <input type="submit" value="Enviar"> -->
+      <div class="pagar">
+        <button class="boton-comprar"><a href="comprobante.html" target="_blank">Pagar</a></button>
+    </div>
+</fieldset>
+    </form>
+</body>
+    <br><br><br>
+    <footer>
+        
+        <hr>
+        <br>
+        <small>©2023 Mayorista Bicileal / Grupo 16 </small>      
+    </footer>
+</body>
+</html>
