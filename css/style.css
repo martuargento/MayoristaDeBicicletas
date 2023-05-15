@@ -28,9 +28,11 @@ span, p, h1, h2, h3, figure, button{
 }
 
 footer{
-    background-color: #f7f7f7;
-    padding:2%;
+    background-color: #ffffff;
+    opacity: 0.5;
+    padding:2%; 
 }
+
 
 h1{
     display:flex;
@@ -42,13 +44,23 @@ h1{
 
 header h1{
     font-family: 'Lato', sans-serif;
+
 }
 
 header ul li a{
-    font-family: 'Nerko One', cursive;
+    font-family: 'Lato', sans-serif;
     font-size: 18px;
     line-height: 18px;
+    font-weight: bold;
+
 }
+
+.prueba { 
+    display: flex; 
+    justify-content: space-between;
+  }
+.a, .b, .c { background: #ffffff; border: 1px solid #999; }
+.b { text-align: center; }
 
 ul{
     display:flex;
@@ -78,8 +90,8 @@ a:visited{
     color: inherit;
 }
 .icono-carrito{
-    width: 40px;
-    height: 40px;
+    width: 35px;
+    height: 35px;
     stroke: #000;
 }
 
@@ -99,12 +111,15 @@ header{
     justify-content: space-between;
     padding: 30px 0 40px 0;
     background-color: #ffffff;
+    
 }
 
 header ul li:hover{
-background-color: rgb(204, 240, 74);
-border-radius: 10px;
-transition: 1s;
+background-color: rgb(123, 187, 47);
+color: #ffffff;
+border-radius: 20px;
+padding: 20px;
+transition: 0.2s;
 }
 
 .contenedor-carrito{
@@ -219,15 +234,52 @@ transition: 1s;
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 25%;
+    width: 35%;
     padding: 10px;
-    background-color: #2dcfa4ec;
-    border-radius: 10px;
+    background-color: rgb(123, 187, 47) ;
+    border-radius: 20px;
     font-size: 15px;
+    font-weight: bold;
+    border-color: #ffffff;
+    border: 2px;
 }
 
+.boton-añadiralcarrito{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 35%;
+    padding: 10px;
+    background-color: rgb(123, 187, 47) ;
+    border-radius: 20px;
+    font-size: 15px;
+    font-weight: bold;
+    border-color: #ffffff;
+    border: 2px;
+}
+
+
 .boton-comprar:hover{
-    background-color: #1fa783ec;
+    background-color: #000000;
+    color: #ffffff;
+    transition: 0.5s;
+}
+
+.boton-formulario{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 25%;
+    padding: 10px;
+    background-color: rgb(123, 187, 47) ;
+    border-radius: 20px;
+    font-size: 15px;
+    font-weight: bold;
+}
+
+.boton-formulario:hover{
+    background-color: #000000;
+    color: #ffffff;
     transition: 0.5s;
 }
 
@@ -247,8 +299,8 @@ transition: 1s;
 }
 
 .item:hover{
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.669);
-    border: 1px solid #000;
+    box-shadow: 0 10px 20px rgb(123, 187, 47);
+    border: 1px solid rgb(123, 187, 47);
     transition: all 0.2s ease-in-out;
 }
 
@@ -288,6 +340,14 @@ figure{
     line-height: 34px;
     min-height: 75px;
 }
+
+.info-producto-ofrecido:hover h2{
+    font-size: 24px;
+    line-height: 34px;
+    min-height: 75px;
+    color: rgb(123, 187, 47);
+}
+
 
 .precio,
 .precio_usd{
@@ -376,6 +436,20 @@ figure{
     color:rgb(10, 10, 10);
 }
 
+.fieldset { 
+border: 1px solid #eee;
+background: none;
+padding: 15px;
+font-weight: 900;
+font-family: 'Lato', sans-serif;
+font-size: 15px;
+border-radius: 10px;
+cursor: pointer;
+display:flex;
+justify-content: center;
+}
+
+
 .mapa{
     display:flex;
     align-items: center;
@@ -392,7 +466,7 @@ figure{
 
 .nuestrahistoriap{
     font-family: 'Lato', sans-serif;
-    font-size: x-large;
+    font-size: medium;
 }
 
 .NHvolver, .Cvolver{
@@ -405,7 +479,7 @@ figure{
 }
 
 .boton-volver:hover{
-    background-color: rgb(204, 240, 74);
+    background-color: rgb(123, 187, 47);
 }
 
 /* Pagina comprobante */
@@ -637,11 +711,11 @@ figure:hover .imagen{
 }
 
 .estilosNuestraHistoria{
-    margin: 20px;
+    margin-left: 151px;
 }
 
 .estilosContactanos{
-    margin: 20px;
+    margin-left: 151px;
 }
 
 .estilosDatosComprador{
@@ -685,3 +759,8 @@ figure:hover .imagen{
     }
 }
 
+#whatsapp {
+    position: fixed;
+    bottom: 20px;
+    right:20px;
+ }

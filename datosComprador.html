@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Realizar compra</title>
+    <link rel="icon" href="img/ico/favicon.ico">
    
 
 
@@ -15,12 +16,14 @@
 
 </head>
 
-<body class="estilosDatosComprador">
+<body>
     <header>
         <p><a href="index.html">Volver</a></p>
     </header>
 
-    <h1>Formulario de Validación de Tarjeta de Crédito</h1>
+    <h2 class="contactanosh2">Complete con su método de pago</h2>
+    <br>
+    <fieldset class="fieldset"> 
     <form method="post" action="procesar.php">
       <label for="nombre">Nombre Completo:</label>
       <input type="text" id="nombre" name="nombre" required><br><br>
@@ -42,13 +45,17 @@
       <input type="text" id="cvv" name="cvv" required><br><br>
       <!-- <input type="submit" value="Enviar"> -->
       <div class="pagar">
-        <button class="boton-pagar"><a href="comprobante.html">Pagar</a></button>
+        <button class="boton-comprar"><a href="comprobante.html" target="_blank">Pagar</a></button>
     </div>
+</fieldset>
     </form>
-
-    
+</body>
+    <br><br><br>
     <footer>
-        <small>© Mayorista Bicileal</small>      
+        
+        <hr>
+        <br>
+        <small>©2023 Mayorista Bicileal / Grupo 16 </small>      
     </footer>
 </body>
 </html>
