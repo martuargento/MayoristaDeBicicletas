@@ -31,24 +31,23 @@
 
 
         <div class="row mb-3">
-            <div class="col-md-4">
-              <label for="nombre">Nombre Completo:</label>
-              <input type="text" id="nombre" class="form-control needs-validation" name="nombre" minlength="3" maxlength="30" required>
-              <div class="valid-feedback">
-                Looks good!
-              </div>
+          <div class="col-md-4">
+            <label for="nombre">Nombre Completo:</label>
+            <input type="text" id="nombre" class="form-control needs-validation" name="nombre" minlength="3" maxlength="30" required>
+            <div class="valid-feedback">
+              Looks good!
             </div>
-            <div class="col-md-4">
-              <label for="dni">DNI:</label>
-              <input type="text" id="dni" class="form-control needs-validation" minlength="8" maxlength="9" name="dni" required pattern="\d+" title="(Solo puede ingresar números)">
-            </div>
-            <div class="col-md-4">  
-              <label for="email">Email:</label>
-              <input type="email" id="email" class="form-control needs-validation" name="email" required>
-            </div>
-            
+          </div>
+          <div class="col-md-4">
+            <label for="dni">DNI:</label>
+            <input type="text" id="dni" class="form-control needs-validation" name="dni" required placeholder="Introduzca su DNI" pattern="[0-9]{9}" title="Ingrese sólo números" minlength="8" maxlength="9" title="(Solo puede ingresar números)">
+          </div>
+          <div class="col-md-4">  
+            <label for="email">Email:</label>
+            <input type="email" id="email" class="form-control needs-validation" name="email" required>
+          </div>
       </div>
-
+      
       <div class="row mb-3">
         <div class="col-md-4">  
           <label for="direccion">Dirección:</label>
@@ -139,61 +138,7 @@
       });
 
 
-      // Comprueba si es un DNI correcto (entre 5 y 8 letras seguidas de la letra que corresponda).
 
-// Acepta NIEs (Extranjeros con X, Y o Z al principio)
-function validateDNI(dni) {
-    var numero, let, letra;
-    var expresion_regular_dni = /^[XYZ]?\d{5,8}[A-Z]$/;
-
-    dni = dni.toUpperCase();
-
-    if(expresion_regular_dni.test(dni) === true){
-        numero = dni.substr(0,dni.length-1);
-        numero = numero.replace('X', 0);
-        numero = numero.replace('Y', 1);
-        numero = numero.replace('Z', 2);
-        let = dni.substr(dni.length-1, 1);
-        numero = numero % 23;
-        letra = 'TRWAGMYFPDXBNJZSQVHLCKET';
-        letra = letra.substring(numero, numero+1);
-        if (letra != let) {
-            //alert('Dni erroneo, la letra del NIF no se corresponde');
-            return false;
-        }else{
-            //alert('Dni correcto');
-            return true;
-        }
-    }else{
-        //alert('Dni erroneo, formato no válido');
-        return false;
-    }
-}
-
-
-
-
-
-
-(function () {
-  'use strict'
-
-  // Fetch all the forms we want to apply custom Bootstrap validation styles to
-  var forms = document.querySelectorAll('.needs-validation')
-
-  // Loop over them and prevent submission
-  Array.prototype.slice.call(forms)
-    .forEach(function (form) {
-      form.addEventListener('submit', function (event) {
-        if (!form.checkValidity()) {
-          event.preventDefault()
-          event.stopPropagation()
-        }
-
-        form.classList.add('was-validated')
-      }, false)
-    })
-})()
     </script>
 
 
