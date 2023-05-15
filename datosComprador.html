@@ -23,23 +23,23 @@
     <h1>Formulario de Validación de Tarjeta de Crédito</h1>
     <form method="post" action="procesar.php">
       <label for="nombre">Nombre Completo:</label>
-      <input type="text" id="nombre" name="nombre" required><br><br>
+      <input type="text" id="nombre" name="nombre"  minlength = 3 maxlength = 30 required><br><br>
       <label for="email">Email:</label>
       <input type="email" id="email" name="email" required><br><br>
       <label for="direccion">Dirección:</label>
-      <input type="text" id="direccion" name="direccion" required><br><br>
+      <input type="text" id="direccion" name="direccion" minlength = 3 maxlength = 30 required><br><br>
       <label for="ciudad">Ciudad:</label>
       <input type="text" id="ciudad" name="ciudad" required><br><br>
       <label for="estado">Estado:</label>
       <input type="text" id="estado" name="estado" required><br><br>
       <label for="codigo-postal">Código Postal:</label>
       <input type="text" id="codigo-postal" name="codigo-postal" required><br><br>
-      <label for="tarjeta" minlength = 16 maxlength = 20 required >Número de Tarjeta de Crédito:</label>
-      <input type="text" id="tarjeta" name="tarjeta" required><br><br>
+      <label for="tarjeta" >Número de Tarjeta de Crédito:</label>
+      <input type="text" id="tarjeta" name="tarjeta"  minlength = 16 maxlength = 20 required ><br><br>
       <label for="expiracion">Fecha de Expiración:</label>
-      <input type="month" id="expiracion" name="expiracion" required><br><br>
-      <label for="cvv">CVV:</label>
-      <input type="text" id="cvv" name="cvv" required><br><br>
+      <input type="month" id="expiracion" name="expiracion" required minlength = 2 maxlength = 2 ><br><br>
+      <label for="cvv" >CVV:</label>
+      <input type="text" id="cvv" name="cvv"  minlength = 3 maxlength = 3 required><br><br>
       <!-- <input type="submit" value="Enviar"> -->
       <div class="pagar">
         <button class="boton-pagar"><a href="comprobante.html">Pagar</a></button>
