@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comprobante</title>
+   
+
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<body class="datosComprobante">
+    <header>
+        <p><a href="index.html">Volver</a></p>
+    </header>
+
+    <div class="comprobante">
+        <h1>Comprobante</h1>
+        <p> Comprador: Raul Lopez</p>
+        <p> DNI: 48012934</p>
+        <br><br>
+
+        <div class="numeroDeComprobante">
+
+        </div>
+    
+        <br><br><br>
+
+        <script>
+            // Generamos número aleatorio de 8 dígitos
+            const numeroAleatorio = Math.floor(Math.random() * 100000000);
+    
+            // Convertimos a cadena de texto y agregamos ceros a la izquierda
+            const numeroComprobante = numeroAleatorio.toString().padStart(8, '0');    
+
+            const divnumeroDeComprobante = document.querySelector('.numeroDeComprobante')
+            const nuevodivNumeroDeComprobante = document.createElement('div')
+            nuevodivNumeroDeComprobante.classList.add('div-comprobante')
+            nuevodivNumeroDeComprobante.innerHTML =   
+            `                           
+            <p>Numero de comprobante: ${numeroComprobante}</p>        
+            `
+
+            divnumeroDeComprobante.append(nuevodivNumeroDeComprobante)
+
+
+        </script>
+        <div class="detalleDeLaCompra">
+            <div class="tituloDetalleDeLaCompra">
+            <p>Detalle de la compra:</p>
+            </div>
+            <br>
+            <div class="suCompra">
+            
+            </div>
+
+            <script>
+                const biciscompradas = JSON.parse(localStorage.getItem('productosSeleccionados'));
+                console.log(biciscompradas);
+                const suCompra = document.querySelector('.suCompra')
+                let contador = 0;
+            
+                biciscompradas.forEach(producto =>{ 
+                contador++
+                let totalaPagar = 0  
+                let precioEntero = parseInt(producto.precio.slice(1).replace('.',''))
+                totalaPagar = totalaPagar + parseInt(producto.cantidad * precioEntero) 
+                console.log("total a pagar: " +totalaPagar)
+                
+                const muestradeproductoscomprados = document.createElement('div')
+                muestradeproductoscomprados.classList.add('producto-comprado')
+                console.log(muestradeproductoscomprados)
+                
+                muestradeproductoscomprados.innerHTML =   
+                
+                `                           
+                <p> Bicicleta: ${producto.titulo}, Precio por unidad: ${producto.precio}, Cantidad: ${producto.cantidad}</p>
+                <br>
+                <p> Total: $${totalaPagar}</p>          
+                `
+                
+                suCompra.append(muestradeproductoscomprados)
+                })
+
+            </script> 
+        </div>
+        <br>
+        <p>******** Para retirar su compra, deberá acercarse a nuestra direccion con este comprobante y su DNI ********</p>
+
+    </div>
+    <footer style="margin-top: 20px;">
+        <small>© Mayorista Bicileal</small>      
+    </footer>
+</body>
+</html>

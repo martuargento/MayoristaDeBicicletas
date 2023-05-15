@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contactanos</title>
+    <link rel="icon" href="img/ico/favicon.ico">
+   
+
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<body class="estilosContactanos">
+    <header>
+        <!-- logo + secciones + RRSS -->
+
+        <div id="logo">
+            <a href="index.html"><img src= img/Logoheader.jpg height="60px"></a>
+        </div>
+        
+        <ul>
+            <li><a href="nuestrahistoria.html">Nuestra historia</a></li>
+            <li><a href="contactanos.html">Contáctenos</a></li>
+          </ul>
+       
+        <a href="www.instagram.com"target="_blank""><img src= img/ico/instagram.svg height="30px"></a></li>
+        <a href="www.facebook.com" target="_blank"><img src= img/ico/facebook.svg height="30px"></a></li>
+
+
+       <!-- Carrito-->
+    
+        <div class="contenedor-carrito">
+        
+            <div class="contenedor-carrito-icono">
+                <!-- icono de carrito -->   
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="icono-carrito">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 00-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 00-16.536-1.84M7.5 14.25L5.106 5.272M6 20.25a.75.75 0 11-1.5 0 .75.75 0 011.5 0zm12.75 0a.75.75 0 11-1.5 0 .75.75 0 011.5 0z" />
+                </svg>
+                <div class="contador-productos">
+                    <span id="contador-productos">0</span>
+                </div>
+            
+            </div>
+
+            <!-- Menu despleglabe de informacion de producto que se va --> 
+            <!--añadiendo al carrito + el total-->
+            <div class="contenedor-productos-carrito ocultar">
+                <!-- Informacion de 1 producto que se añade al carrito-->
+                <div class="fila-de-un-producto">  
+                    <p class="carrito-vacio">El carrito esta vacio </p>
+                    <div class="producto-seleccionado ocultar">
+                        <div class="info-producto-seleccionado">
+                            <span class="cantidad-producto-seleccionado">1</span>
+                            <p class="titulo-producto-seleccionado">Zapatilla Nike</p>
+                            <div class="contenedor-productos-sel">
+                                <span class="precio-producto-seleccionado">$80</span>
+                                <span class="precio-producto-seleccionado-usd">0</span>
+                            </div>         
+                            
+                        </div>
+                        <!-- icono de X -->
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24     24"     stroke-width="1.5" stroke="currentColor" class="icono-cerrar">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18        6M6 6l12 12" />
+                        </svg>
+                    </div> 
+                </div>
+                             
+                <!-- Total a pagar -->
+                <div class="carrito-total ocultar">
+                    <h3>Total:</h3>
+                    <span class="total-pagar">$200</span>    
+                    <span class="total-pagar-usd">0</span>    
+                </div>
+                <div class="comprar ocultar">
+                    <button class="boton-comprar"><a href="datosComprador.html">Comprar</a></button>
+                </div>
+            </div>
+        
+        </div>
+    </header>
+
+    <h2 class="contactanosh2">Mensajeenos por las Redes Sociales</h2>
+    <br>
+    <div class="redes-sociales">
+        
+        <button class="boton-redes" >
+            <a href="#">
+            <i class="fa-brands fa-instagram icoinstagram" href></i> Instagram
+            </a>
+        </button>
+        
+        <button class="boton-redes">
+            <a href="#">
+            <i class="fa-brands fa-facebook icofacebook"></i> Facebook
+            </a>
+        </button>
+
+        <button class="boton-redes">
+            <a href="#">
+            <i class="fa-brands fa-whatsapp icowhatsapp"></i> Whatsapp
+            </a>
+        </button>
+
+        <button class="boton-redes">
+            <a href="#">
+            <i class="fa-brands fa-telegram icotelegram"></i> Telegram
+            </a>
+        </button>
+
+        <button class="boton-redes">
+            <a href="#">
+            <i class="fa-brands fa-tiktok icotiktok"></i> Tiktok
+            </a>
+        </button>
+    </div>
+    <br>
+    <br>
+
+</head>
+
+<h2 class="contactanosh2">O deje su mensaje aquí</h2>
+<br>
+    <fieldset class="fieldset"> 
+    <form action="link" method="post" target="_blank">
+        <label for="nombre"></label>
+        Nombre y Apellido   <input type="text" name="nombre" id="nombre" size="20" maxlength="10">
+          <br> <br>
+        E-mail  <input type="email" name="Email" id="email" size="20" maxlength="40">
+        <br> <br>
+        Telefono  <input type="tel"name= "Telefono" id="Telefono">
+        <br> <br>
+         <textarea name="Comentarios" id="Comentarios" cols="30" rows="10"> Escriba aquí</textarea>
+    <br>
+    <button class="boton-comprar"> Enviar </button> <br> <button class="boton-comprar"> Borrar</button> 
+     </fieldset>
+   
+<br>
+
+</fieldset>
+          
+    </form>
+    
+
+
+</fieldset>
+</main>
+</body>
+</html>
+    <br><br><br>
+    
+    <h2 class="contactanosh2">Ubicación</h2>
+    <br>
+    <p>Suipacha 559, CABA, Buenos aires</p>
+    <p>Lunes a Viernes de 10 a 18 hs.</p>
+    <br><br>
+    <div class="mapa">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d6568.184639622229!2d-58.37955661515478!3d-34.60182696176064!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1ses!2sar!4v1683867814842!5m2!1ses!2sar" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+    
+
+    <footer>
+        
+        <hr>
+        <br>
+        <small>©2023 Mayorista Bicileal / Grupo 16 </small>      
+    </footer>
+    
+      <script src="https://kit.fontawesome.com/e808169f4d.js" crossorigin="anonymous"></script>  
+</body>
+</html>
