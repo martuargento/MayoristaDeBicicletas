@@ -163,6 +163,7 @@ header ul{
 .secciones ul li{
     width: 150px;
     max-width: 150px;
+    padding: 10px 20px;
 }
 
 .redes-principal{
