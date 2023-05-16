@@ -739,7 +739,8 @@ input:valid {
 @media (max-width: 480px) {
 
     header{
-        max-width: 100%;
+        flex-wrap: wrap;
+        justify-content:center
     }
 
     header h2{
@@ -752,14 +753,17 @@ input:valid {
     }
 
     #logo{
-        min-width: 22%;
-        max-width: 22%;
+        min-width: 70%;
+        max-width: 70%;
+        order: 1;
+        margin-bottom: 20px;
     }
 
     .secciones{
-        min-width: 62%;
-        max-width: 62%;
+        min-width: 84%;
+        max-width: 84%;
         margin-left: 4px;
+        order: 2;
     }
 
     .secciones ul li{
@@ -769,6 +773,17 @@ input:valid {
     .secciones ul{
         flex-direction: row !important;
     }
+
+    .contenedor-carrito-icono svg{
+        margin-top: 11px;
+        padding-left: 2px;
+    }
+
+    .contenedor-carrito-icono svg{
+        height: 37px;
+        width: 37px;
+    }
+    
 
     header ul li a{
         font-size: 16px;  
@@ -785,6 +800,10 @@ input:valid {
         display: none;
     }
 
+    .contenedor-carrito{
+        order: 1;
+    }
+
     .fieldset{
         width: 200px;
     }
@@ -795,17 +814,31 @@ input:valid {
         justify-content: center;
         align-items: center;
     }
+
+    .nombreyapellido input{
+        height: 25px;
+    }
+
     .email{
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
     }
+
+    .email input{
+        height: 25px;
+    }
+
     .telefono{
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
+    }
+
+    .telefono input{
+        height: 25px;
     }
 
     .formulario textarea{
@@ -816,6 +849,21 @@ input:valid {
     .contenedor-productos-ofrecidos{
         grid-template-columns: 1fr;
     }
+
+    .contenedor-precio{
+        flex-direction: column;
+    }
+
+    .contactanosh2{
+        text-align: center;
+    }
+
+    .content{
+        padding-left: 10px;
+        padding-right: 10px;
+
+    }
+
     .redes-sociales {
         display: flex;
         flex-wrap: wrap;
@@ -827,15 +875,19 @@ input:valid {
         width: 100%;
         margin-bottom: 10px;
       }
+
     h1{
         width:100px;
     }
+
     ul{
         flex-direction: column;
     }
+
     ul li{
         margin: 10px;
     }
+
     a{
         font-size: 12px;
         font-weight: 550;
