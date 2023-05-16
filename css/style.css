@@ -785,6 +785,34 @@ input:valid {
         display: none;
     }
 
+    .fieldset{
+        width: 200px;
+    }
+
+    .nombreyapellido{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .email{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .telefono{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .formulario textarea{
+        margin-left: 5px;
+        margin-right: 5px;
+    }
+
     .contenedor-productos-ofrecidos{
         grid-template-columns: 1fr;
     }
@@ -867,6 +895,18 @@ input:valid {
     .icono-cerrar{
         margin-left: 20px;
         scale: 2;
+    }
+    
+    .mapa{
+        display: block;
+        width: 300px; 
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .mapa iframe{
+        display:block;
+        width: 300px;  
     }
 
 }
