@@ -167,10 +167,10 @@ header ul{
 }
 
 .redes-principal{
-    /* margin-left: 50px; */
     min-width: 70px;
+    display:flex;
+    justify-content: space-between;
 }
-
 
 .secciones ul li a{
     display:flex;
@@ -356,37 +356,22 @@ header ul{
     flex-direction: column;
 }
 
+
+.nombreyapellido input, .email input,
+.telefono input{
+    height: 30px;
+}
+
+.nombreyapellido, .email, .telefono{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
 .nombreyapellido{
     margin-top: 10px;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
 }
-
-.nombreyapellido label{
-    margin-right: 10px;
-}
-
-.email{
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-.email label{
-    margin-right: 10px;
-}
-
-.telefono{
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-.telefono label{
-    margin-right: 10px;
-}
-
 
 /* Main (Productos en venta) */
 
@@ -618,6 +603,11 @@ figure{
     margin-bottom: 40px;
 }
 
+.producto-comprado p, .retiro-de-compra, .numeroDeComprobante{
+    flex-wrap: wrap;
+    text-align: center;
+}
+
 .tituloDetalleDeLaCompra{
     border-width: 3px;
     border-style: solid;
@@ -628,6 +618,11 @@ figure{
     border-right: 1px dotted black;
     border-bottom: 1px dotted black;
 
+}
+
+.content{
+    padding-left: 30px;
+    padding-right: 30px;
 }
 
 .content img{
@@ -733,6 +728,22 @@ input:valid {
         max-width: 190px;
     }
 
+    .content{
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+    .mapa{
+        display: block;
+        width: 400px; 
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .mapa iframe{
+        display:block;
+        width: 400px;  
+    }
 }
 
 
@@ -808,34 +819,17 @@ input:valid {
         width: 200px;
     }
 
-    .nombreyapellido{
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-    }
+    
 
     .nombreyapellido input{
         height: 25px;
-    }
-
-    .email{
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
     }
 
     .email input{
         height: 25px;
     }
 
-    .telefono{
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-    }
+   
 
     .telefono input{
         height: 25px;

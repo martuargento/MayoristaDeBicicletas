@@ -38,10 +38,37 @@
               Looks good!
             </div>
           </div>
+          
+          <script>
+            const nombreInput = document.getElementById('nombre');
+            
+            // Escuchamos al evento 'input' para detectar cuando el usuario escriba algo
+            nombreInput.addEventListener('input', function() {
+              // Obtenemos el valor de lo que escriba
+              const nombre = nombreInput.value;
+              
+              // Guardar el valor en el almacenamiento local
+              localStorage.setItem('nombre', nombre);
+            });
+          </script>
+          
           <div class="col-md-4">
             <label for="dni">DNI:</label>
-            <input type="text" id="dni" class="form-control needs-validation" name="dni" required placeholder="Introduzca su DNI" pattern="[0-9]{9}" title="Ingrese sólo números" minlength="8" maxlength="9" title="(Solo puede ingresar números)">
+            <input type="text" id="dni" class="form-control needs-validation" name="dni" required placeholder="Introduzca su DNI" pattern="[0-9]{8}" title="Ingrese sólo números" minlength="8" maxlength="9" title="(Solo puede ingresar números)">
           </div>
+          <script>
+            const dniInput = document.getElementById('dni');
+            
+            // Escuchamos al evento 'input' para detectar cuando el usuario escriba algo
+            dniInput.addEventListener('input', function() {
+              // Obtenemos el valor de lo que escriba
+              const dni = dniInput.value;
+              
+              // Guardar el valor en el almacenamiento local
+              localStorage.setItem('dni', dni);
+            });
+          </script>
+
           <div class="col-md-4">  
             <label for="email">Email:</label>
             <input type="email" id="email" class="form-control needs-validation" name="email" required>
