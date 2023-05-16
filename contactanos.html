@@ -24,15 +24,20 @@
             <a href="index.html"><img src= img/Logoheader.jpg height="60px"></a>
         </div>
         
-        <ul>
-            <li><a href="index.html">Productos</a></li>
-            <li><a href="nuestrahistoria.html">Nuestra historia</a></li>
-            <li class="active"><a href="#">Contáctenos</a></li>
-          </ul>
+        <div class="secciones">
+            <ul>
+                <li><a href="index.html">Productos</a></li>
+                <li><a class="nuestra-historia" href="nuestrahistoria.html">Nuestra historia</a></li>
+                <li class="active"><a href="#">Contáctenos</a></li>
+              </ul>
+        </div>
+        
        
-        <a href="www.instagram.com"target="_blank"><img src= img/ico/instagram.svg height="30px"></a></li>
-        <a href="www.facebook.com" target="_blank"><img src= img/ico/facebook.svg height="30px"></a></li>
-
+          <div class="redes-principal">
+            <a href="www.instagram.com"target="_blank"><img src= img/ico/instagram.svg height="30px"></a></li>
+            <a href="www.facebook.com" target="_blank"><img src= img/ico/facebook.svg height="30px"></a></li>    
+          </div>
+        
 
        <!-- Carrito-->
     
@@ -128,17 +133,29 @@
 <h2 class="contactanosh2">O deje su mensaje aquí</h2>
 <br>
     <fieldset class="fieldset"> 
-    <form action="link" method="post" target="_blank">
-        <label for="nombre"></label>
-        Nombre y Apellido   <input type="text" name="nombre" id="nombre" size="20" maxlength="10">
-          <br> <br>
-        E-mail  <input type="email" name="Email" id="email" size="20" maxlength="40">
+    <form class="formulario" action="link" method="post" target="_blank">
+        <div class="nombreyapellido">
+            <label for="nombre">Nombre y Apellido </label>
+            <input type="text" name="nombre" id="nombre" size="20" maxlength="10">
+              <br> <br>
+        </div>
+
+        <div class="email">
+        <label for="nombre">E-mail</label>  
+        <input type="email" name="Email" id="email" size="20" maxlength="40">
         <br> <br>
-        Telefono  <input type="tel"name= "Telefono" id="Telefono">
+        </div>
+
+        <div class="telefono">
+        <label for="nombre">Telefono</label> 
+        <input type="tel"name= "Telefono" id="Telefono">
         <br> <br>
+        </div>
+        
          <textarea name="Comentarios" id="Comentarios" cols="30" rows="10"> Escriba aquí</textarea>
     <br>
-    <button class="boton-comprar"> Enviar </button> <br> <button class="boton-comprar"> Borrar</button> 
+    <button class="boton-comprar"> Enviar </button> <br> 
+    <button class="boton-comprar boton-borrar"> Borrar</button> 
      </fieldset>
    
 <br>
