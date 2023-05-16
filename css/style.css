@@ -603,7 +603,7 @@ figure{
     margin-bottom: 40px;
 }
 
-.producto-comprado p, .retiro-de-compra, .numeroDeComprobante{
+.producto-comprado p, .retiro-de-compra, .numeroDeComprobante, #nombre-comprador, #dni-comprador{
     flex-wrap: wrap;
     text-align: center;
 }
