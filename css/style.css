@@ -1,5 +1,5 @@
 /* Reiniciando los estilos globales  */
-*::after,  
+*::after,
 *::before,
 
 /* Estilos Globales */
@@ -30,7 +30,7 @@ span, p, h1, h2, h3, figure, button{
 footer{
     background-color: #ffffff;
     opacity: 0.5;
-    padding:2%; 
+    padding:2%;
 }
 
 
@@ -55,8 +55,10 @@ header ul li a{
 
 }
 
-.prueba { 
-    display: flex; 
+
+
+.prueba {
+    display: flex;
     justify-content: space-between;
   }
 .a, .b, .c { background: #ffffff; border: 1px solid #999; }
@@ -73,7 +75,7 @@ ul{
 }
 
 ul li{
-    margin: 40px;
+    margin: 10px;
     display:inline;
 }
 
@@ -111,15 +113,69 @@ header{
     justify-content: space-between;
     padding: 30px 0 40px 0;
     background-color: #ffffff;
-    
+    width: 100%;
 }
 
-header ul li:hover{
+#logo{
+    display: flex;
+    min-width: 25%;
+    max-width: 25%;
+}
+
+#logo img{
+    min-width: 100%;
+    max-width: 100%;
+}
+
+header ul li a,
+header ul li{
+    text-align: center;
+    padding: 10px 20px;
+    transition: all 0.2s;
+}
+header ul li:hover,
+header ul li:active,
+header ul li.active{
 background-color: rgb(123, 187, 47);
 color: #ffffff;
 border-radius: 20px;
-padding: 20px;
-transition: 0.2s;
+padding: 10px 20px;
+transition: all 0.2s;
+}
+
+header ul li.active a{
+    color: #ffffff;
+}
+
+header ul{
+    min-width: 500px;
+    max-width: 500px;
+}
+
+.secciones{
+    display: flex;
+    margin-right: 10px;
+    min-width: 500px;
+    max-width: 500px;
+    margin-left: -40px;
+}
+
+.secciones ul li{
+    width: 150px;
+    max-width: 150px;
+    padding: 10px 20px;
+}
+
+.redes-principal{
+    min-width: 70px;
+    display:flex;
+    justify-content: space-between;
+}
+
+.secciones ul li a{
+    display:flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .contenedor-carrito{
@@ -129,21 +185,21 @@ transition: 0.2s;
 
 .contador-productos{
     position: absolute;
-    top: 55%; 
-    right: 0; 
+    top: 55%;
+    right: 0;
     background-color: #000;
-    color: #fff; 
+    color: #fff;
     width: 25px;
     height: 25px;
     display: flex;
     align-items: center;
     justify-content: center ;
     border-radius: 50%;
-    
+
 }
 
 #contador-productos{
-    font-size: 12px;    
+    font-size: 12px;
 }
 
 .contenedor-productos-carrito{
@@ -195,6 +251,12 @@ transition: 0.2s;
     justify-content: center;
 }
 
+.contenedor-precio{
+    display:flex;
+    align-items: center;
+    justify-content: center;
+}
+
 .icono-cerrar{
     width: 25px;
     height: 25px;
@@ -221,6 +283,8 @@ transition: 0.2s;
 .total-pagar{
     font-size: 20px;
     font-weight: 900;
+    margin-right: 3px;
+
 }
 
 .comprar{
@@ -242,6 +306,10 @@ transition: 0.2s;
     font-weight: bold;
     border-color: #ffffff;
     border: 2px;
+}
+
+.boton-borrar{
+    margin-bottom: 10px;
 }
 
 .boton-añadiralcarrito{
@@ -283,6 +351,30 @@ transition: 0.2s;
     transition: 0.5s;
 }
 
+.formulario{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+
+.nombreyapellido input, .email input,
+.telefono input{
+    height: 30px;
+}
+
+.nombreyapellido, .email, .telefono{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.nombreyapellido{
+    margin-top: 10px;
+}
+
 /* Main (Productos en venta) */
 
 .contenedor-productos-ofrecidos{
@@ -309,7 +401,7 @@ transition: 0.2s;
     position: relative;
     width: 100%;
     height: 100%;
-    object-fit: contain; 
+    object-fit: contain;
     border-radius: 10px 10px 0 0;
     transition: all .5s;
     min-height: 290px;
@@ -339,6 +431,8 @@ figure{
     font-size: 24px;
     line-height: 34px;
     min-height: 75px;
+    margin-right: auto;
+    margin-left: auto;
 }
 
 .info-producto-ofrecido:hover h2{
@@ -355,13 +449,17 @@ figure{
     font-weight: 900 ;
 }
 
+.precio_usd{
+    color: rgb(4, 136, 4);
+}
+
 .info-producto-ofrecido button{
     border:none;
     background: none;
     background-color: #000;
     color: #fff;
     padding: 15px 10px;
-    cursor: pointer; 
+    cursor: pointer;
     border-radius: 1%;
 }
 
@@ -436,17 +534,20 @@ figure{
     color:rgb(10, 10, 10);
 }
 
-.fieldset { 
-border: 1px solid #eee;
-background: none;
-padding: 15px;
-font-weight: 900;
-font-family: 'Lato', sans-serif;
-font-size: 15px;
-border-radius: 10px;
-cursor: pointer;
-display:flex;
-justify-content: center;
+.fieldset {
+    display:block;
+    /* justify-content: center;
+    align-items: center; */
+    background: none;
+    font-weight: 900;
+    font-family: 'Lato', sans-serif;
+    font-size: 15px;
+    margin: 0 auto;
+    width: 80%;
+}
+
+.form-contactanos{
+    max-width: 400px;
 }
 
 
@@ -466,7 +567,7 @@ justify-content: center;
 
 .nuestrahistoriap{
     font-family: 'Lato', sans-serif;
-    font-size: medium;
+    font-size: 16px;
 }
 
 .NHvolver, .Cvolver{
@@ -488,6 +589,7 @@ justify-content: center;
     margin-left: 10%;
     margin-right: 10%;
     font-family: 'Lato', sans-serif;;
+    border-style: double;
 }
 
 .comprobante p{
@@ -503,12 +605,26 @@ justify-content: center;
     margin-bottom: 20px;
 }
 
+.total-de-operacion{
+    flex-wrap: wrap;
+    border-style: dotted;
+}
+
+.total-final{
+    font-weight: 600;
+}
+
 .producto-comprado{
     margin-bottom: 40px;
 }
 
+.producto-comprado p, .retiro-de-compra, .numeroDeComprobante, #nombre-comprador, #dni-comprador{
+    flex-wrap: wrap;
+    text-align: center;
+}
+
 .tituloDetalleDeLaCompra{
-    border-width: 3px; 
+    border-width: 3px;
     border-style: solid;
     border-color: black;
 }
@@ -516,8 +632,31 @@ justify-content: center;
     border-left: 1px dotted black;
     border-right: 1px dotted black;
     border-bottom: 1px dotted black;
-    
+
 }
+
+.content{
+    padding-left: 30px;
+    padding-right: 30px;
+}
+
+.content img{
+    height: 250px;
+    width: 100%;
+    object-fit: cover;
+    margin-bottom: 50px;
+
+}
+
+input:invalid {
+    border: 2px solid red;
+}
+
+input:valid {
+    border: 2px solid green;
+}
+
+
 
 
 @media (max-width: 768px) {
@@ -527,9 +666,33 @@ justify-content: center;
 }
 
 @media (max-width: 768px) {
-    
-    header h1{
+
+
+    header ul{
+        min-width: 100%;
+        max-width: 100%;
+    }
+
+    .secciones{
+        min-width: 62%;
+        max-width: 62%;
+        margin-left: 4px;
+    }
+
+    .secciones ul li{
+        width: 33%;
+    }
+
+    header ul li a{
+        font-size: 16px;    
+    }
+
+    .contenedor-carrito{
         margin-left: 10px;
+    }
+
+    .redes-principal{
+        display: none;
     }
 
     .contenedor-productos-ofrecidos{
@@ -552,20 +715,20 @@ justify-content: center;
         margin-right: 7px;
         font-size: 18px;
     }
-    
+
     .titulo-producto-seleccionado{
         width: 20px;
         min-width: 90px !important;
         font-size: 18px !important;
     }
-    
+
     .precio-producto-seleccionado{
-        font-size: 18px !important; 
+        font-size: 18px !important;
     }
 
     .precio-producto-seleccionado-usd{
         margin-left: 25px !important;
-        font-size: 18px !important; 
+        font-size: 18px !important;
     }
 
     .titulo-producto-carrito {
@@ -580,48 +743,165 @@ justify-content: center;
         max-width: 190px;
     }
 
+    .content{
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+    .mapa{
+        display: block;
+        width: 400px; 
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .mapa iframe{
+        display:block;
+        width: 400px;  
+    }
 }
 
 
 @media (max-width: 480px) {
 
-    header h1{
-        margin-left: 10px;
-        font-size: 20px;
+    header{
+        flex-wrap: wrap;
+        justify-content:center
     }
 
     header h2{
         font-size: 10px;
     }
 
+    header ul{
+        min-width: 100%;
+        max-width: 100%;
+    }
+
+    #logo{
+        min-width: 70%;
+        max-width: 70%;
+        order: 1;
+        margin-bottom: 20px;
+    }
+
+    .secciones{
+        min-width: 84%;
+        max-width: 84%;
+        margin-left: 4px;
+        order: 2;
+    }
+
+    .secciones ul li{
+        width: 33%;
+    }
+
+    .secciones ul{
+        flex-direction: row !important;
+    }
+
+    .contenedor-carrito-icono svg{
+        margin-top: 11px;
+        padding-left: 2px;
+    }
+
+    .contenedor-carrito-icono svg{
+        height: 37px;
+        width: 37px;
+    }
+    
+
+    header ul li a{
+        font-size: 16px;  
+        line-height: 18px;
+        font-weight: bold;
+      
+    }
+
+    .contenedor-carrito{
+        margin-left: 10px;
+    }
+
+    .redes-principal{
+        display: none;
+    }
+
+    .contenedor-carrito{
+        order: 1;
+    }
+
+    .fieldset{
+        max-width: 200px;
+    }
+
+    
+
+    .nombreyapellido input{
+        height: 25px;
+    }
+
+    .email input{
+        height: 25px;
+    }
+
+   
+
+    .telefono input{
+        height: 25px;
+    }
+
+    .formulario textarea{
+        margin-left: 5px;
+        margin-right: 5px;
+    }
+
     .contenedor-productos-ofrecidos{
         grid-template-columns: 1fr;
     }
+
+    .contenedor-precio{
+        flex-direction: column;
+    }
+
+    .contactanosh2{
+        text-align: center;
+    }
+
+    .content{
+        padding-left: 10px;
+        padding-right: 10px;
+
+    }
+
     .redes-sociales {
         display: flex;
         flex-wrap: wrap;
         justify-content: center;
         align-items: center;
       }
-    
+
       .boton-redes {
         width: 100%;
         margin-bottom: 10px;
       }
+
     h1{
         width:100px;
     }
+
     ul{
         flex-direction: column;
     }
+
     ul li{
         margin: 10px;
     }
+
     a{
         font-size: 12px;
         font-weight: 550;
     }
-    
+
     .contenedor-productos-carrito{
         width:270px;
     }
@@ -663,19 +943,31 @@ justify-content: center;
         display: flex;
         justify-content: start;
         align-items: center;
-        
+
     }
 
     .precio-producto-seleccionado-usd{
         margin-left: 3px !important;
         font-weight: 500 !important;
-        
-       
+
+
     }
 
     .icono-cerrar{
         margin-left: 20px;
         scale: 2;
+    }
+    
+    .mapa{
+        display: block;
+        width: 300px; 
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .mapa iframe{
+        display:block;
+        width: 300px;  
     }
 
 }
@@ -707,16 +999,17 @@ opacity: 1;
 
 figure:hover .imagen{
     transform: scale(1.55);
-    
-}
 
+}
+/*
 .estilosNuestraHistoria{
     margin-left: 151px;
-}
+} */
 
-.estilosContactanos{
+
+/* .estilosContactanos{
     margin-left: 151px;
-}
+} */
 
 .estilosDatosComprador{
     margin: 40px;
@@ -756,6 +1049,8 @@ figure:hover .imagen{
         display: block;
         justify-content: space-between;
         align-items: center;
+        margin-left: auto;
+        margin-right: auto;
     }
 }
 

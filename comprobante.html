@@ -22,8 +22,32 @@
 
     <div class="comprobante">
         <h1>Comprobante</h1>
-        <p> Comprador: Raul Lopez</p>
-        <p> DNI: 48012934</p>
+        <p id="nombre-comprador"> Comprador: </p>
+        <script>
+            const compradorParrafo = document.getElementById('nombre-comprador');
+          
+            // Obtenemos el nombre del almacenamiento local
+            const nombreGuardado = localStorage.getItem('nombre');
+          
+            // Actualizamos el contenido del párrafo con el nombre guardado
+            if (nombreGuardado) {
+              compradorParrafo.textContent += nombreGuardado;
+            }
+          </script>
+
+        <p id="dni-comprador"> DNI: </p>
+        
+        <script>
+            const dniParrafo = document.getElementById('dni-comprador');
+          
+            // Obtenemos el dni del almacenamiento local
+            const dniGuardado = localStorage.getItem('dni');
+          
+            // Actualizamos el contenido del párrafo con el dni guardado
+            if (dniGuardado) {
+              dniParrafo.textContent += dniGuardado;
+            }
+          </script>
         <br><br>
 
         <div class="numeroDeComprobante">
@@ -60,14 +84,18 @@
             
             </div>
 
+            <div class="total-de-operacion">
+
+            </div>
+
             <script>
                 const biciscompradas = JSON.parse(localStorage.getItem('productosSeleccionados'));
                 console.log(biciscompradas);
                 const suCompra = document.querySelector('.suCompra')
-                let contador = 0;
+                let totalDeTodo = 0;
             
                 biciscompradas.forEach(producto =>{ 
-                contador++
+                
                 let totalaPagar = 0  
                 let precioEntero = parseInt(producto.precio.slice(1).replace('.',''))
                 totalaPagar = totalaPagar + parseInt(producto.cantidad * precioEntero) 
@@ -86,12 +114,29 @@
                 `
                 
                 suCompra.append(muestradeproductoscomprados)
+                totalDeTodo+=totalaPagar
                 })
 
+                const totalDeOperacion = document.querySelector('.total-de-operacion')
+                const ParrafoDeTotalFinal = document.createElement('div')
+                ParrafoDeTotalFinal.classList.add('total-final')
+
+                ParrafoDeTotalFinal.innerHTML = 
+                ` 
+                <p> Total final: </p>
+                <p> $${totalDeTodo} 
+                ` 
+                
+                totalDeOperacion.append(ParrafoDeTotalFinal)
             </script> 
+
+            
+
+           
+
         </div>
         <br>
-        <p>******** Para retirar su compra, deberá acercarse a nuestra direccion con este comprobante y su DNI ********</p>
+        <p class="Retiro-de-compra">*** Para retirar su compra, deberá acercarse a nuestra direccion con este comprobante y su DNI ***</p>
 
     </div>
     <footer style="margin-top: 20px;">

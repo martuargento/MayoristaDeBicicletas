@@ -24,14 +24,20 @@
             <a href="index.html"><img src= img/Logoheader.jpg height="60px"></a>
         </div>
         
-        <ul>
-            <li><a href="nuestrahistoria.html">Nuestra historia</a></li>
-            <li><a href="contactanos.html">Contáctenos</a></li>
-          </ul>
+        <div class="secciones">
+            <ul>
+                <li><a href="index.html">Productos</a></li>
+                <li><a class="nuestra-historia" href="nuestrahistoria.html">Nuestra historia</a></li>
+                <li class="active"><a href="#">Contáctenos</a></li>
+              </ul>
+        </div>
+        
        
-        <a href="www.instagram.com"target="_blank""><img src= img/ico/instagram.svg height="30px"></a></li>
-        <a href="www.facebook.com" target="_blank"><img src= img/ico/facebook.svg height="30px"></a></li>
-
+          <div class="redes-principal">
+            <a href="https://www.instagram.com"target="_blank"><img src= img/ico/instagram.svg height="30px"></a></li>
+            <a href="https://www.facebook.com" target="_blank"><img src= img/ico/facebook.svg height="30px"></a></li>    
+          </div>
+        
 
        <!-- Carrito-->
     
@@ -126,32 +132,33 @@
 
 <h2 class="contactanosh2">O deje su mensaje aquí</h2>
 <br>
-    <fieldset class="fieldset"> 
-    <form action="link" method="post" target="_blank">
-        <label for="nombre"></label>
-        Nombre y Apellido   <input type="text" name="nombre" id="nombre" size="20" maxlength="10">
-          <br> <br>
-        E-mail  <input type="email" name="Email" id="email" size="20" maxlength="40">
-        <br> <br>
-        Telefono  <input type="tel"name= "Telefono" id="Telefono">
-        <br> <br>
-         <textarea name="Comentarios" id="Comentarios" cols="30" rows="10"> Escriba aquí</textarea>
-    <br>
-    <button class="boton-comprar"> Enviar </button> <br> <button class="boton-comprar"> Borrar</button> 
-     </fieldset>
+    <fieldset class="fieldset form-contactanos"> 
+        <form class="formulario" action="link" method="post" target="_blank">
+            <div class="nombreyapellido">
+                <label for="nombre">Nombre y Apellido </label>
+                <input type="text" name="nombre" id="nombre" size="20" maxlength="10">
+                <br>
+            </div>
+
+            <div class="email">
+                <label for="nombre">E-mail</label>  
+                <input type="email" name="Email" id="email" size="20" maxlength="40">
+                <br>
+            </div>
+
+            <div class="telefono">
+                <label for="nombre">Telefono</label> 
+                <input type="tel"name= "Telefono" id="Telefono">
+                <br>
+            </div>
+        
+            <textarea name="Comentarios" id="Comentarios" cols="30" rows="10"> Escriba aquí</textarea>
+            <br>
+            <button class="boton-comprar"> Enviar </button> <br> 
+            <button class="boton-comprar boton-borrar"> Borrar</button> 
+        </form>    
+    </fieldset>
    
-<br>
-
-</fieldset>
-          
-    </form>
-    
-
-
-</fieldset>
-</main>
-</body>
-</html>
     <br><br><br>
     
     <h2 class="contactanosh2">Ubicación</h2>
@@ -165,12 +172,11 @@
     
 
     <footer>
-        
         <hr>
         <br>
         <small>©2023 Mayorista Bicileal / Grupo 16 </small>      
     </footer>
     
-      <script src="https://kit.fontawesome.com/e808169f4d.js" crossorigin="anonymous"></script>  
+    <script src="https://kit.fontawesome.com/e808169f4d.js" crossorigin="anonymous"></script>  
 </body>
 </html>
