@@ -284,6 +284,7 @@ header ul{
     font-size: 20px;
     font-weight: 900;
     margin-right: 3px;
+
 }
 
 .comprar{
@@ -588,6 +589,7 @@ figure{
     margin-left: 10%;
     margin-right: 10%;
     font-family: 'Lato', sans-serif;;
+    border-style: double;
 }
 
 .comprobante p{
@@ -601,6 +603,15 @@ figure{
     width: 100%;
     padding-top: 10px;
     margin-bottom: 20px;
+}
+
+.total-de-operacion{
+    flex-wrap: wrap;
+    border-style: dotted;
+}
+
+.total-final{
+    font-weight: 600;
 }
 
 .producto-comprado{

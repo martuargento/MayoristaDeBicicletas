@@ -84,14 +84,18 @@
             
             </div>
 
+            <div class="total-de-operacion">
+
+            </div>
+
             <script>
                 const biciscompradas = JSON.parse(localStorage.getItem('productosSeleccionados'));
                 console.log(biciscompradas);
                 const suCompra = document.querySelector('.suCompra')
-                let contador = 0;
+                let totalDeTodo = 0;
             
                 biciscompradas.forEach(producto =>{ 
-                contador++
+                
                 let totalaPagar = 0  
                 let precioEntero = parseInt(producto.precio.slice(1).replace('.',''))
                 totalaPagar = totalaPagar + parseInt(producto.cantidad * precioEntero) 
@@ -110,9 +114,26 @@
                 `
                 
                 suCompra.append(muestradeproductoscomprados)
+                totalDeTodo+=totalaPagar
                 })
 
+                const totalDeOperacion = document.querySelector('.total-de-operacion')
+                const ParrafoDeTotalFinal = document.createElement('div')
+                ParrafoDeTotalFinal.classList.add('total-final')
+
+                ParrafoDeTotalFinal.innerHTML = 
+                ` 
+                <p> Total final: </p>
+                <p> $${totalDeTodo} 
+                ` 
+                
+                totalDeOperacion.append(ParrafoDeTotalFinal)
             </script> 
+
+            
+
+           
+
         </div>
         <br>
         <p class="Retiro-de-compra">*** Para retirar su compra, deberá acercarse a nuestra direccion con este comprobante y su DNI ***</p>
