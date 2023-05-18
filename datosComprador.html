@@ -10,55 +10,115 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
   <link rel="stylesheet" href="css/style.css">
 </head>
+
+
 
 <body>
   <header>
     <p><a href="index.html">Volver</a></p>
   </header>
-  
+
   <h2 class="contactanosh2">Complete con su método de pago</h2>
   <br>
-  <fieldset class="fieldset">
-    <form method="post" id="formulario">
-      <label for="nombre">Nombre Completo:</label>
-      <input type="text" id="nombre" name="nombre" minlength="3" maxlength="30" required><br><br>
-      <label for="email">Email:</label>
-      <input type="email" id="email" name="email" required><br><br>
-      <label for="direccion">Dirección:</label>
-      <input type="text" id="direccion" name="direccion" minlength="3" maxlength="30" required><br><br>
-      <label for="ciudad">Ciudad:</label>
-      <input type="text" id="ciudad" name="ciudad" required><br><br>
-      <label for="estado">Estado:</label>
-      <input type="text" id="estado" name="estado" required><br><br>
-      <label for="codigo-postal">Código Postal:</label>
-      <input type="text" id="codigo-postal" name="codigo-postal" required><br><br>
-      <label for="tarjeta">Número de Tarjeta de Crédito:</label>
-      <input type="text" id="tarjeta" name="tarjeta" minlength="16" maxlength="20" required><br><br>
-      <label for="expiracion">Fecha de Expiración:</label>
-      <input type="month" id="expiracion" name="expiracion" required><br><br>
-      <label for="cvv">CVV:</label>
-      <input type="text" id="cvv" name="cvv" minlength="3" maxlength="3" required><br><br>
-      <div class="pagar">
-        <button id="boton-pagar" class="boton-comprar">Pagar</button>
+
+
+  <form method="post" id="formulario" class="g-3">
+      <fieldset class="fieldset container">
+
+
+        <div class="row mb-3">
+          <div class="col-md-4">
+            <label for="nombre">Nombre Completo:</label>
+            <input type="text" id="nombre" class="form-control needs-validation" name="nombre" placeholder="ANDRES LEAL" minlength="3" maxlength="30" required>
+            <div class="valid-feedback">
+              Looks good!
+            </div>
+          </div>
+          
+          <script>
+            const nombreInput = document.getElementById('nombre');
+            
+            // Escuchamos al evento 'input' para detectar cuando el usuario escriba algo
+            nombreInput.addEventListener('input', function() {
+              // Obtenemos el valor de lo que escriba
+              const nombre = nombreInput.value;
+              
+              // Guardar el valor en el almacenamiento local
+              localStorage.setItem('nombre', nombre);
+            });
+          </script>
+          
+          <div class="col-md-4">
+            <label for="dni">DNI:</label>
+            <input type="text" id="dni" class="form-control needs-validation" name="dni" required placeholder="Introduzca su DNI" pattern="[0-9]{8}" title="Ingrese sólo números" minlength="8" maxlength="9" title="(Solo puede ingresar números)">
+          </div>
+          <script>
+            const dniInput = document.getElementById('dni');
+            
+            // Escuchamos al evento 'input' para detectar cuando el usuario escriba algo
+            dniInput.addEventListener('input', function() {
+              // Obtenemos el valor de lo que escriba
+              const dni = dniInput.value;
+              
+              // Guardar el valor en el almacenamiento local
+              localStorage.setItem('dni', dni);
+            });
+          </script>
+
+          <div class="col-md-4">  
+            <label for="email">Email:</label>
+            <input type="email" id="email" class="form-control needs-validation" placeholder="bici@bicileal.com" name="email" required>
+          </div>
       </div>
-    </form>
-  </fieldset>
+      
+      <div class="row mb-3">
+        <div class="col-md-4">  
+          <label for="direccion">Dirección:</label>
+          <input type="text" id="direccion"class="form-control needs-validation" name="direccion" placeholder="Rivadavia 100 , 2 - A " minlength="3" maxlength="30" required>
+        </div>
+        <div class="col-md-4">  
+          <label for="estado">Estado:</label>
+          <input type="text" id="estado" class="form-control needs-validation" placeholder="CABA" name="estado" required>
+        </div>
+        <div class="col-md-4">  
+          <label for="codigo-postal">Código Postal:</label>
+          <input type="text" id="codigo-postal" class="form-control needs-validation" minlength="4" maxlength="4"  placeholder="1400" name="codigo-postal" pattern="[0-9]{4}" required title="(Solo puede ingresar números)">
+        </div>
+      </div>
 
-  <script>
-    const botonPagar = document.getElementById('boton-pagar');
+      <div class="row mb-3">
+        <div class="col-md-4">  
+          <label for="tarjeta">Número de Tarjeta de Crédito:</label>
+          <input type="text" id="tarjeta" class="form-control needs-validation" placeholder="0000000000000000" name="tarjeta" pattern="[0-9]{16,20}" minlength="16" maxlength="20" required title="(Solo puede ingresar números)">
+        </div>
+        <div class="col-md-4">  
+          <label for="expiracion">Fecha de Expiración:</label>
+          <input type="month" id="expiracion" class="form-control needs-validation" name="expiracion" required pattern="\d{4}-\d{2}" min="">
+        </div>
+        <div class="col-md-4">  
+          <label for="cvv">CVV:</label>
+          <input type="text" id="cvv" class="form-control needs-validation" name="cvv" placeholder="000" minlength="3" maxlength="3" required>
+        </div>
+      </div>
 
-    botonPagar.addEventListener('click', function() {
-      if (document.getElementById("formulario").checkValidity()) {
-        window.location.replace('comprobante.html');
-      } else {
-        alert("Por favor complete los campos obligatorios correctamente.");
-      }
-    });
-  </script>
+      <div class="row mb-3">
+        <div class="col-md-12">  
+          <p class="error" id="expiracion-error"></p>
 
-  <br><br><br>
+          <div class="pagar">
+            <button id="boton-pagar" class="boton-comprar mx-auto">Pagar</button>
+          </div>
+        </div>    
+      </div>
+
+        
+      </fieldset>
+
+  </form>
 
     <footer>
         
@@ -66,5 +126,48 @@
         <br>
         <small>©2023 Mayorista Bicileal / Grupo 16 </small>      
     </footer>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+  
+
+    <script>
+      const expiracionInput = document.getElementById('expiracion');
+      const expiracionError = document.getElementById('expiracion-error');
+  
+      expiracionInput.addEventListener('input', function() {
+      if (!isValidExpiration(expiracionInput.value)) {
+          expiracionInput.setCustomValidity('La fecha de expiración debe ser posterior al mes actual.');
+          expiracionError.textContent = 'La fecha de expiración debe ser posterior al mes actual.';
+      } 
+      else {
+      expiracionInput.setCustomValidity('');
+          expiracionError.textContent = '';
+      }
+      });
+  
+      function isValidExpiration(expiration) {
+      const today = new Date();
+      const expirationDate = new Date(expiration + '-01');
+      expirationDate.setMonth(expirationDate.getMonth() + 1);
+      return expirationDate > today;
+      }
+  
+      const botonPagar = document.getElementById('boton-pagar');
+  
+      botonPagar.addEventListener('click', function() {
+        if (document.getElementById("formulario").checkValidity()) {
+          event.preventDefault();
+          window.location.href = 'comprobante.html';
+          console.log("hola")
+        } 
+      });
+
+
+
+    </script>
+
+
 </body>
 </html>
