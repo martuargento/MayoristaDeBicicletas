@@ -200,7 +200,7 @@ const mostrarYAplicarEnHTML = () =>{
 
     //====================================================================================
     //====================================================================================
-    // Inicio Fijarse que es lo que hice con chat-gpt, es para que quite los puntos, pueda
+    // Inicio quitar los puntos y pueda
     //hacer la operacion de sumar los valores, y los vuelva a mostrar con puntos.
     //si el resultado es de miles, con un solo punto, si supera el millon con dos puntos.
     let precioEntero = parseInt(producto.precio.slice(1).replace('.',''))
@@ -228,7 +228,7 @@ const mostrarYAplicarEnHTML = () =>{
             return primeraParteFormateada + "." + segundaParte;
         }
 }
-// fin Fijarse que es lo que hice con chat-gpt, es para que quite los puntos, pueda
+// fin quitar los puntos y pueda
 //hacer la operacion de sumar los valores, y los vuelva a mostrar con puntos.
 //si el resultado es de miles, con un solo punto, si supera el millon con dos puntos.
 //====================================================================================
